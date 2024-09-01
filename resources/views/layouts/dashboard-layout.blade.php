@@ -109,16 +109,15 @@
         }
     });
 
-    function sweetAlert(title, text, icon) {
+    function sweetAlert(title, icon) {
         Toast.fire({
             title: title,
-            text: text,
             icon: icon,
         })
     }
 
     @if (session()->has('status'))
-        sweetAlert("{{ session('status') }}", "haha", "success");
+        sweetAlert("{{ session('status') }}", "success");
     @endif
 </script>
 
