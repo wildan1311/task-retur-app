@@ -47,7 +47,7 @@ class BarangMasukController extends Controller
 
         $barangMasuk = BarangMasuk::find($id);
         if($request->banyak_barang_rusak + $request->banyak_barang_baik != $barangMasuk->jumlah_barang){
-            return redirect()->back()->with(['status' => 'failed', 'message' => 'Barang belum dicek secara keseluruhan']);
+            return redirect()->back()->with('status','Barang belum dicek secara keseluruhan');
         }
 
         DetailKualitasBarangMasuk::create([
