@@ -43,6 +43,11 @@ class BarangKeluarController extends Controller
             'jenis' => 'required',
         ]);
         BarangKeluar::create($request->all());
+        if($request->jenis == 'barang_terjual'){
+            $barang = Barang::find($request->barang_id);
+            $barang->stok -= $request->jumlah_barang;
+            $barang->save();
+        }
         return redirect()->route('dashboard.barang-keluar')->with('status', 'Data Berhasil Ditambah');
     }
 }
