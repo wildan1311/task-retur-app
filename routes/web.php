@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\BarangKeluarController;
 use App\Http\Controllers\Dashboard\BarangMasukController;
 use App\Http\Controllers\Dashboard\ReturController;
+use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,14 @@ Route::middleware('auth')->group(function () {
         Route::get('barang-keluar', [BarangKeluarController::class, 'index'])->name('barang-keluar');
         Route::get('barang-keluar/create', [BarangKeluarController::class, 'create'])->name('barang-keluar.create');
         Route::post('barang-keluar/create', [BarangKeluarController::class, 'store'])->name('barang-keluar.store');
+        // user
+        Route::get('user', [UserController::class, 'index'])->name('user.index');
+        Route::get('user/create', [UserController::class, 'create'])->name('user.create');
+        Route::post('user/create', [UserController::class, 'store'])->name('user.store');
+        Route::get('user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+        Route::put('user/{id}/edit', [UserController::class, 'update'])->name('user.update');
+        Route::delete('user/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');
+
     });
 });
 
