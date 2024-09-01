@@ -7,7 +7,7 @@ updated_at	timestamp NULL --}}
 <x-dashboard-layout>
     <div class="w-100 card">
         <div class="card-header">
-            <h3>Tambah Barang Masuk</h3>
+            <h3>Tambah Barang Keluar</h3>
         </div>
         <div class="card-body">
             <form action="" method="POST">
