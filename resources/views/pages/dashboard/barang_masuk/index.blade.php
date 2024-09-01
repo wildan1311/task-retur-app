@@ -44,7 +44,7 @@
                             </td>
                             <td>
                                 <div class="flex justify-content-center align-items-center">
-                                    <button class="btn btn-success text-white">
+                                    <button class="btn btn-success text-white" @disabled($barang_masuk->status == 'sudah_diperiksa')>
                                         <a href="{{ route('dashboard.barang-masuk.cek', $barang_masuk->id) }}"
                                             class="text-white">Cek Kualitas</a>
                                     </button>
