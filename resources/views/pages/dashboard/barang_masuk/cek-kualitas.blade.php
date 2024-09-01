@@ -8,11 +8,11 @@
                 @csrf
                 <div class="form-group">
                     <label for="">Banyak Barang Rusak</label>
-                    <input type="number" class="form-control" name="banyak_barang_rusak">
+                    <input type="number" class="form-control" name="banyak_barang_rusak" value="0">
                 </div>
                 <div class="form-group">
                     <label for="">Banyak Barang Baik</label>
-                    <input type="number" class="form-control" name="banyak_barang_baik">
+                    <input type="number" class="form-control" name="banyak_barang_baik" value="0">
                 </div>
 
                 <button type="submit" class="btn btn-success">Submit</button>
