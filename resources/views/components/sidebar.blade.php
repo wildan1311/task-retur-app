@@ -20,24 +20,29 @@
 
     @auth
         @if (auth()->user()->role == 'gudang' || auth()->user()->role == 'admin')
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.barang-masuk') ? 'active' : '' }}">
                 <a class="nav-link {{ Route::is('dashboard.barang-masuk') ? 'active' : '' }}" href="{{ route('dashboard.barang-masuk') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Barang Masuk</span></a>
             </li>
         @endif
         @if (auth()->user()->role == 'pengiriman' || auth()->user()->role == 'admin')
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.barang-keluar') ? 'active' : '' }}">
                 <a class="nav-link {{ Route::is('dashboard.barang-keluar') ? 'active' : '' }}" href="{{ route('dashboard.barang-keluar') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Barang Keluar</span></a>
             </li>
         @endif
         @if (auth()->user()->role == 'admin')
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.retur.supplier') ? 'active' : '' }}">
                 <a class="nav-link {{ Route::is('dashboard.retur.supplier') ? 'active' : '' }}" href="{{ route('dashboard.retur.supplier') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Retur</span></a>
+            </li>
+            <li class="nav-item {{ Route::is('dashboard.user.index') ? 'active' : '' }}">
+                <a class="nav-link {{ Route::is('dashboard.user.index') ? 'active' : '' }}" href="{{ route('dashboard.user.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>User</span></a>
             </li>
         @endif
     @endauth
